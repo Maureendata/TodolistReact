@@ -1,33 +1,15 @@
-import Tododisplay from "./Tododisplay";
 import { useState } from "react";
-
+import TodoList from "./TodoList";
+import Form  from "./Form";
 export default function Todo() {
-  // initializing todo
-  const [todo, setTodo] = useState("");
-  //initializing todo task
+  // initializing todos
   const [todos, setTodos] = useState([]);
-  function handleSubmit(e) {
-    e.preventDefault();
-    setTodos([...todos, todo]);
-    //allow for clear screen after inserting values
-    setTodo("");
-  }
+  
   return (
     <div>
-      {/* prevent refreshing */}
-      <form onSubmit={handleSubmit}>
-        {/* ensuring todo has a task */}
-        <input
-          onChange={(e) => setTodo(e.target.value)}
-          value={todo}
-          type="text"
-        />
-        <button type="submit">Submit</button>
-      </form>
-      {todos}
-      {todos.map((item) => (
-        <Tododisplay key={item} item={item} />
-      ))}
+      {/* Add Todos and Todolist.Ensure Todos is using prop */}
+      <Form todos={todos} setTodos={setTodos}/>
+     <TodoList todos={todos} setTodos={setTodos}/>
     </div>
   );
 }

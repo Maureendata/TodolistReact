@@ -1,0 +1,21 @@
+.display {
+  font-size: larger;
+  width: 100%;
+  padding: 2px;
+}
+.display-item {
+  font-weight: bolder;
+}
+.line{
+    border:1px solid #f4f4f4;
+}
+.btn{
+  float:right;
+  padding:5px 7px;
+  margin-right:1rem;
+  width:3rem;
+  cursor:pointer;
+  background-color: yellow; 
+  font-weight:bold;
+  border-radius:3px;
+}
